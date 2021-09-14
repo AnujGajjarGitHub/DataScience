@@ -1,0 +1,43 @@
+class Account():
+    def __init__(self,owner,balance):
+        self.owner=owner
+        self.balance=balance
+    
+    def deposit(self,deposit):
+        self.balance=self.balance+deposit
+        return "Deposit of {dep} successful,New Balance is {bal}".format(dep=deposit,bal=self.balance)
+    
+    def withdraw(self,withdraw):
+        if self.balance>=withdraw:
+            self.balance=self.balance-withdraw
+            return "Withdraw of {wdr} successful,New Balance is {bal}".format(wdr=withdraw,bal=self.balance)
+        else:
+            return "Insufficient Balance"
+
+
+
+
+class Person:
+      """A base class"""
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+class Student(Person):
+      """A derived class for Student"""
+      def __init__(self, name, age, school):
+          Person.__init__(self, name, age)
+          self.school = school
+
+      def introduce(self):
+      	  return "My name is " + self.name + ". I am " + str(self.age).strip() + " years old. I am studying at " + self.school + "."
+
+
+class WorkingAdult(Person):
+      """A derived class for WorkingAdult"""
+      def __init__(self, name, age, job):
+          Person.__init__(self, name, age)
+          self.job = job
+
+      def introduce(self):
+      	  return "My name is " + self.name + ". I am " + str(self.age) + " years old. I am a " + str(self.job).lower() + "."

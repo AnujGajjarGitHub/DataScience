@@ -1,0 +1,14 @@
+num=range(20,51,1)
+for x in num:
+    if (x%2)!=0 and (x%3)!=0 and (x%4)!=0 and (x%5)!=0 and (x%6)!=0 and (x%7)!=0:
+        print(x)
+
+
+num1=range(20,51,1)
+for x in num1:
+    num2=range(2,x,1)
+    for y in num2:
+        if (x%y)==0:
+            break
+    else:
+        print(x)
