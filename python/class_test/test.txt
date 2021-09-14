@@ -1,0 +1,135 @@
+1)
+def func(start,num):    
+    b=num+1
+    for i in range(start,b):
+        if i%3==0 and i%5==0:
+            print("{i}:FizzBuzz".format(i=i)) 
+        elif i%3==0:
+            print("{i}:Fizz".format(i=i))
+        elif i%5==0:
+            print("{i}:Buzz".format(i=i))
+            
+            
+func(1,50)
+
+2)
+def func(str):
+    a=len(str)
+    b=''
+    for i in range(0,a,1):
+        b=b+'_'
+    return str+b
+
+
+func("Hi")
+
+3)
+def anagram(str1,str2):
+    a=list(str1)
+    a.sort()
+    for i in a:
+        if i==' ':
+            a.remove(' ')
+    b=list(str2)
+    b.sort()
+    for i in b:
+        if i==' ':
+            b.remove(' ')
+    if a==b:
+        return "Anagram"
+    else:
+        return "not Anagram"
+        
+        
+        
+anagram("ab c","abc") -->Anagram
+anagram("abc","abc") -->Anagram
+anagram("abc","abd") -->not Anagram
+
+
+4)
+def remove(list):
+    list.pop(0)
+    list.pop(len(list)-1)
+    return list
+
+    
+    
+    
+remove([1,2,3,4,5]) 
+
+
+5)
+def index(list):
+    for i in range(0,len(list)):
+        print("Value: "+str(list[i])+ " Index: "+ str(i))
+    
+
+index([1,2,3,4,5])  
+
+
+6)
+def rev(dict):
+    dict2={}
+    for i in reversed(dict):
+        dict2[i]=dict[i]
+    return dict2
+
+rev({"Name":"ABC","Age":25}) 
+
+
+7)
+def fib(n):
+    a=0
+    b=1
+    sum=0
+    while (sum<=n):
+        print(sum)
+        a=b
+        b=sum
+        sum=a+b
+        
+fib(5)
+
+8)
+
+def double(str):
+    
+    a= str.replace("aa","a")
+    b= a.replace("AA","A")
+    c= b.replace("ii","i")
+    d= c.replace("II","I")
+    e= d.replace("OO","O")
+    f= e.replace("oo","o")
+    g= f.replace("EE","E")
+    h= g.replace("ee","e")
+    i= h.replace("UU","U")
+    j= i.replace("uu","u")
+    return j
+            
+            
+double("Thiis iis aa gooood praactiicee")
+
+
+9)
+def union(L1,L2):
+    S1=set(L1)
+    S2=set(L2)
+    u=S1.union(S2)
+    return list(u)
+
+
+union([1,2,3,3],[1,4,5,5])
+
+
+10)
+def pagenum(digit,num):
+    for i in range(0,num+1):
+        if i==digit:
+            count=0
+            for j in range(1,num+1):
+                if str(i) in str(j):
+                    count+=1
+            print("For {num} page book, digit {digit} occurs {count} page numbers ".format(num=num,digit=digit,count=count))
+        
+pagenum(0,151)
